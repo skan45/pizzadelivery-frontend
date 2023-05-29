@@ -6,11 +6,39 @@ body {
 header {
 	background-color: #FFFFFF;
 	padding: 10px;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:30px 10%; 
 }
+header ul {
+	position:relative;
+	display:flex;
+}
+header ul li{
+	list-style:none;
 
+}
+header ul li p{
+	color:#FCA510;
+}
+.nav__links li a {
+	dislay:inline-block;
+	padding: 0px 20px;
+	text-decoration: none;
+	color:black;
+}
+.nav__links li a {
+	transition: all 0.3s ease 0s ;
+
+}
+.nav__links li a:hover {
+	color:#C40233;
+}
 img {
 	max-width: 10%;
 	height: auto;
+	cursor: pointer;
 }
 
 main {
