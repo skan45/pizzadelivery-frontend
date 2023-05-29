@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <link rel="shortcut icon" href="../DevWeb/images/icon.jpg"/>
-    <meta charset="UTF-8">
-    <title>Pizza Delivery Login</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="login-page">
-      <div class="form">
-        <img src="../DevWeb/images/icon.jpg" alt="rapido" class="logo">
-        <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
-          <button>login</button>
-          <p class="message">Not registered? <a href="CreateAccount.html">Create an account</a></p>
-        </form>
+  <html>
+    <head>
+        <link rel="shortcut icon" href="/images/icon.jpg"/>
+      <meta charset="UTF-8">
+      <title>Pizza Delivery Login</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      
+      <div class="login-page">
+        <div class="form">
+          <img src="/images/icon.jpg" alt="rapido" class="logo">
+          <form class="login-form" action="index.php" method="post" >
+            <input type="text" placeholder="username" name="name" />
+            <input type="password" placeholder="password" name="password" />
+            <button name="Create">login</button>
+            <p class="message">Not registered? <a href="CreateAccount.html">Create an account</a></p>
+          </form>
+          
+        </div>
       </div>
-    </div>
-  </body>
-</html>
+    </body>
+  </html>
