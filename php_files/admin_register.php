@@ -21,7 +21,6 @@ if(isset($_POST['register'])){
 
    $select_admin = $conn->prepare("SELECT * FROM `admin` WHERE name = ?");
    $select_admin->execute([$name]);
-
    if($select_admin->rowCount() > 0){
       $message[] = 'username already exist!';
    }else{

@@ -46,7 +46,7 @@ if(isset($_GET['delete'])){
 
    <div class="box">
       <p>add new user</p>
-      <a href="/CreateAccount.html" class="option-btn">register user</a>
+      <a href="../html_files/CreateAccount.html" class="option-btn">register user</a>
    </div>
 
    <?php

@@ -16,7 +16,7 @@ function changeautomatique(){
     const colors=['#FCA510','#183215','#dfbdc3']
     let index =0;
     const frame=document.querySelector('.pizza');
-    const pizzas=["images/9-pizza-png-image.png","images/19-pizza-png-image.png","images/29-pizza-png-image.png" ];
+    const pizzas=["/images/9-pizza-png-image.png","/images/19-pizza-png-image.png","/images/29-pizza-png-image.png" ];
 setInterval(()=>{
    circle.style.background=colors[index];
    button.style.background=colors[index];
