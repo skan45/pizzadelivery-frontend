@@ -1,0 +1,102 @@
+body {
+	background-color: #ffffff;
+	font-family: Arial, sans-serif;
+}
+#cart-icon{
+	font-size: 1.8rem;
+	cursor:pointer;
+	bottom: -10px;
+}
+
+header {
+	background-color: #FFFFFF;
+	padding: 10px;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:30px 10%; 
+}
+header ul {
+	position:relative;
+	display:flex;
+}
+header ul li{
+	list-style:none;
+
+}
+header ul li p{
+	color:#FCA510;
+}
+.nav__links li a {
+	dislay:inline-block;
+	padding: 0px 20px;
+	text-decoration: none;
+	color:black;
+}
+.nav__links li a {
+	transition: all 0.3s ease 0s ;
+
+}
+.nav__links li a:hover {
+	color:#C40233;
+}
+img {
+	max-width: 10%;
+	height: auto;
+	cursor: pointer;
+}
+
+main {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+h1 {
+	color: #C40233;
+	text-align: center;
+}
+
+#pizza-selection {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.pizza {
+	margin: 20px;
+	background-color: #FFFFFF;
+	padding: 20px;
+	text-align: center;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pizza img {
+	max-width: 100%;
+	height: auto;
+}
+
+.pizza h2 {
+	color: #C40233;
+	margin-top: 10px;
+}
+
+label {
+	display: block;
+}
+
+input[type="number"] {
+	margin-bottom: 10px;
+}
+
+#checkout {
+	display: block;
+	margin: 20px auto;
+	background-color: #C40233;
+	color: #FFFFFF;
+	border: none;
+	padding: 10px 20px;
+	font-size: 1.2em;
+	cursor: pointer;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}

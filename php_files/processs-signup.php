@@ -7,8 +7,11 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
     $fname=clean($_POST["fname"]);
     $lname=clean($_POST["lname"]);
     $city=clean($_POST["City"]);
-    
     $radio1=clean($_POST["radiogroup1"]);
+    if (isset($_POST["radiogroup1"])){
+      $select=$_POST["radiogroup1"];
+
+    }
     $error=false;
     if (!filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)){
         die("valid email is required ");
@@ -32,11 +35,10 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
      $mysqli=require __DIR__."/databaseconnection.php";
      $sql= "INSERT INTO user(email,first_name,last_name,password_hash,city,sexe) VALUES (?,?,?,?,?,?)";
      $stmt = $mysqli->stmt_init();
-     $sexe="male";
      if(! $stmt->prepare($sql)){
         die("SQL ERROR :" .$mysqli->error);
      }
-     $stmt->bind_param('ssssss',$email,$fname,$lname,$password_hash,$city,$sexe);
+     $stmt->bind_param('ssssss',$email,$fname,$lname,$password_hash,$city,$select);
        if ($stmt->execute()){
         echo "signup succesful ";
        }

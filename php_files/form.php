@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
         <link rel="shortcut icon" href="/images/icon.jpg"/>
       <meta charset="UTF-8">
       <title>Pizza Delivery Login</title>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="../css_files/style.css">
     </head>
     <body>
       <div class="login-page">
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
             <input type="text" placeholder="e-mail" name="email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>" />
             <input type="password" placeholder="password" name="password" />
             <button name="Create">login</button>
-            <p class="message">Not registered? <a href="CreateAccount.html">Create an account</a></p>
+            <p class="message">Not registered? <a href="../html_files/CreateAccount.html">Create an account</a></p>
           </form>
           
         </div>
