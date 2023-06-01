@@ -14,7 +14,7 @@
 
 <header class="header">
  <section class="flex">   
-<a href="/php_files/admin_page.php" class="logo">Admin<span>Panel</span></a>
+ <a href="/php_files/admin_page.php" class="logo"><img src="/images/icon.jpg"></a>
 <nav class="navbar">
     <a href="/php_files/admin_page.php">home</a>
     <a href="/php_files/admin_products.php">products</a>

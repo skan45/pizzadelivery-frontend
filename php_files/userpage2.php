@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
         if(isset($user)){
          $name=$user['first_name']." ".$user['last_name'];
       }
-      $pizzaname='pizza 1';
+      $pizzaname=$_POST['pizza'];
       $select_pizza =$conn->prepare("SELECT * FROM `products`where name =?");
       $select_pizza->execute([$pizzaname]);
       $pid=$select_pizza->fetch(PDO::FETCH_ASSOC);
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
     if(isset($user)){
      $name=$user['first_name']." ".$user['last_name'];
   }
-  $pizzaname='pizza 2';
+  $pizzaname=$_POST['pizza'];
   $select_pizza =$conn->prepare("SELECT * FROM `products`where name =?");
   $select_pizza->execute([$pizzaname]);
   $pid=$select_pizza->fetch(PDO::FETCH_ASSOC);
@@ -63,7 +63,7 @@ if (isset($_POST['add_to_cart3'])){
     if(isset($user)){
      $name=$user['first_name']." ".$user['last_name'];
   }
-  $pizzaname='pizza 3';
+  $pizzaname=$_POST['pizza'];
   $select_pizza =$conn->prepare("SELECT * FROM `products`where name =?");
   $select_pizza->execute([$pizzaname]);
   $pid=$select_pizza->fetch(PDO::FETCH_ASSOC);
@@ -87,7 +87,7 @@ if (isset($_POST['add_to_cart4'])){
     if(isset($user)){
      $name=$user['first_name']." ".$user['last_name'];
   }
-  $pizzaname='pizza 4';
+  $pizzaname=$_POST['pizza'];
   $select_pizza =$conn->prepare("SELECT * FROM `products`where name =?");
   $select_pizza->execute([$pizzaname]);
   $pid=$select_pizza->fetch(PDO::FETCH_ASSOC);
@@ -111,7 +111,7 @@ if (isset($_POST['add_to_cart5'])){
     if(isset($user)){
      $name=$user['first_name']." ".$user['last_name'];
   }
-  $pizzaname='pizza 5';
+  $pizzaname=$_POST['pizza'];
   $select_pizza =$conn->prepare("SELECT * FROM `products`where name =?");
   $select_pizza->execute([$pizzaname]);
   $pid=$select_pizza->fetch(PDO::FETCH_ASSOC);
@@ -135,7 +135,7 @@ if (isset($_POST['add_to_cart6'])){
     if(isset($user)){
      $name=$user['first_name']." ".$user['last_name'];
   }
-  $pizzaname='pizza 6';
+  $pizzaname=$_POST['pizza'];
   $select_pizza =$conn->prepare("SELECT * FROM `products`where name =?");
   $select_pizza->execute([$pizzaname]);
   $pid=$select_pizza->fetch(PDO::FETCH_ASSOC);
@@ -159,7 +159,7 @@ if (isset($_POST['add_to_cart7'])){
     if(isset($user)){
      $name=$user['first_name']." ".$user['last_name'];
   }
-  $pizzaname='pizza 7';
+  $pizzaname=$_POST['pizza'];
   $select_pizza =$conn->prepare("SELECT * FROM `products`where name =?");
   $select_pizza->execute([$pizzaname]);
   $pid=$select_pizza->fetch(PDO::FETCH_ASSOC);
@@ -183,7 +183,7 @@ if (isset($_POST['add_to_cart8'])){
     if(isset($user)){
      $name=$user['first_name']." ".$user['last_name'];
   }
-  $pizzaname='pizza 8';
+  $pizzaname=$_POST['pizza'];
   $select_pizza =$conn->prepare("SELECT * FROM `products`where name =?");
   $select_pizza->execute([$pizzaname]);
   $pid=$select_pizza->fetch(PDO::FETCH_ASSOC);
@@ -207,7 +207,7 @@ if (isset($_POST['add_to_cart9'])){
     if(isset($user)){
      $name=$user['first_name']." ".$user['last_name'];
   }
-  $pizzaname='pizza 9';
+  $pizzaname=$_POST['pizza'];
   $select_pizza =$conn->prepare("SELECT * FROM `products`where name =?");
   $select_pizza->execute([$pizzaname]);
   $pid=$select_pizza->fetch(PDO::FETCH_ASSOC);
@@ -263,7 +263,7 @@ if (isset($_POST['order'])){
    <link rel="stylesheet" href="../css_files/top.css">
 
 </head>
-<body>
+<body >
    
 <!-- header section starts  -->
 
@@ -277,11 +277,29 @@ if (isset($_POST['order'])){
          <a href="#home">home</a>
          <a href="#menu">menu</a>
          <a href="#order">order</a>
+         <a href="../php_files/logout.php">logout</a>
       </nav>
 
       <div class="icons">
          <div id="menu-btn" class="fas fa-bars"></div>
-         <div id="cart-btn" class="fas fa-shopping-cart"><span>(4)</span></div>
+         <div id="cart-btn" class="fas fa-shopping-cart"></div>
+         <div class="cart">
+             <h2 class="cart-title">Your Cart</h2>
+            <!-- content  -->
+            <div class="cart-content">
+            </div>
+            <!-- total  -->
+            <div class="total">
+                <div class="total-title">Total</div>
+                <div class="total-price">$0</div>
+            </div>
+            <!-- buy button  -->
+            <button type="button" class="btn-buy">Buy Now</button>
+            <!-- cart close -->
+            <i class='bx bx-x' id="close-cart"></i>
+
+
+        </div>
       </div>
    </section>
 
@@ -295,9 +313,9 @@ if (isset($_POST['order'])){
 
       <div class="slide-container">
 
-         <div class="slide active">
+         <div class="slide">
             <div class="image">
-               <img src="../images/pizza-1.jpg" alt="">
+               <img src="../images/29-pizza-png-image.png" alt="">
             </div>
             <div class="content">
                <h3>homemade Pepperoni Pizza</h3>
@@ -306,9 +324,9 @@ if (isset($_POST['order'])){
             </div>
          </div>
 
-         <div class="slide">
+         <div class="slide active">
             <div class="image">
-               <img src="images/home-img-2.png" alt="">
+               <img src="../images/19-pizza-png-image.png" alt="">
             </div>
             <div class="content">
                <h3>Pizza With Mushrooms</h3>
@@ -319,7 +337,7 @@ if (isset($_POST['order'])){
 
          <div class="slide">
             <div class="image">
-               <img src="images/home-img-3.png" alt="">
+               <img src="../images/26-pizza-png-image.png" alt="">
             </div>
             <div class="content">
                <h3>Mascarpone And Mushrooms</h3>
@@ -347,95 +365,30 @@ if (isset($_POST['order'])){
    <h1 class="heading">our menu</h1>
 
    <div class="box-container">
+      <?php
+      
+      $select_products =$conn->prepare("SELECT * FROM `products`");
+    $select_products->execute();
+    $i=0;
+    if($select_products->rowCount() > 0){
+      
+        while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
+         $i++;
+         echo'<div class="box">
+         <div class="price"><span>'.$fetch_products['price'].'</span>dt</div>
+         <img src="../images/'.$fetch_products['image'].'" alt="">
+         <div class="name">'.$fetch_products['name'].'</div>
+         <form action="" method="post">
+            <input type="hidden" name="pizza" value="'.$fetch_products['name'].'">
+            <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+            <input type="submit" value="add to cart" name="add_to_cart'.$i.'" class="btn">
+         </form>
+      </div>';
+        }
+    }
+      ?>
 
-      <div class="box">
-         <div class="price">$<span>2</span>/-</div>
-         <img src="images/pizza-1.jpg" alt="">
-         <div class="name">pizza 1</div>
-         <form action="" method="post">
-            <input type="number" min="1" max="100" value="1" class="qty" name="qty">
-            <input type="submit" value="add to cart" name="add_to_cart1" class="btn">
-         </form>
-      </div>
-      <div class="box">
-         <div class="price">$<span>4</span>/-</div>
-         <img src="images/pizza-2.jpg" alt="">
-         <div class="name">pizza 2</div>
-         <form action="" method="post">
-            <input type="number" min="1" max="100" value="1" class="qty" name="qty">
-            <input type="submit" value="add to cart" name="add_to_cart2" class="btn">
-         </form>
-      </div>
-
-      <div class="box">
-         <div class="price">$<span>2</span>/-</div>
-         <img src="images/pizza-3.jpg" alt="">
-         <div class="name">pizza 3</div>
-         <form action="" method="post">
-            <input type="number" min="1" max="100" value="1" class="qty" name="qty">
-            <input type="submit" value="add to cart" name="add_to_cart3" class="btn">
-         </form>
-      </div>
-
-      <div class="box">
-         <div class="price">$<span>3</span>/-</div>
-         <img src="images/pizza-4.jpg" alt="">
-         <div class="name">pizza 4</div>
-         <form action="" method="post">
-            <input type="number" min="1" max="100" value="1" class="qty" name="qty">
-            <input type="submit" value="add to cart" name="add_to_cart4" class="btn">
-         </form>
-      </div>
-
-      <div class="box">
-         <div class="price">$<span>2</span>/-</div>
-         <img src="images/pizza-5.jpg" alt="">
-         <div class="name">pizza 5</div>
-         <form action="" method="post">
-            <input type="number" min="1" max="100" value="1" class="qty" name="qty">
-            <input type="submit" value="add to cart" name="add_to_cart5" class="btn">
-         </form>
-      </div>
-
-      <div class="box">
-         <div class="price">$<span>4</span>/-</div>
-         <img src="images/pizza-6.jpg" alt="">
-         <div class="name">pizza 6</div>
-         <form action="" method="post">
-            <input type="number" min="1" max="100" value="1" class="qty" name="qty">
-            <input type="submit" value="add to cart" name="add_to_cart6" class="btn">
-         </form>
-      </div>
-
-      <div class="box">
-         <div class="price">$<span>2</span>/-</div>
-         <img src="images/pizza-7.jpg" alt="">
-         <div class="name">pizza 7</div>
-         <form action="" method="post">
-            <input type="number" min="1" max="100" value="1" class="qty" name="qty">
-            <input type="submit" value="add to cart" name="add_to_cart7" class="btn">
-         </form>
-      </div>
-
-      <div class="box">
-         <div class="price">$<span>3</span>/-</div>
-         <img src="images/pizza-8.jpg" alt="">
-         <div class="name">pizza 8</div>
-         <form action="" method="post">
-            <input type="number" min="1" max="100" value="1" class="qty" name="qty">
-            <input type="submit" value="add to cart" name="add_to_cart8" class="btn">
-         </form>
-      </div>
-
-      <div class="box">
-         <div class="price">$<span>4</span>/-</div>
-         <img src="../images/29-pizza-png-image.png" alt="">
-         <div class="name">pizza 9</div>
-         <form action="" method="post">
-            <input type="number" min="1" max="100" value="1" class="qty" name="qty">
-            <input type="submit" value="add to cart" name="add_to_cart9" class="btn">
-         </form>
-      </div>
+      
 
    </div>
 
@@ -489,7 +442,7 @@ if (isset($_POST['order'])){
          </div>
          <div class="inputBox">
             <span>address  :</span>
-            <input type="text" name="address" class="box" required placeholder="adress" maxlength="50">
+            <input type="text" name="address" class="box" required placeholder="address" maxlength="50">
          </div>
       </div>
 
@@ -513,7 +466,7 @@ if (isset($_POST['order'])){
       <div class="box">
          <i class="fas fa-clock"></i>
          <h3>opening hours</h3>
-         <p>00:09am to 23:00pm</p>
+         <p>11:00am to 23:00pm</p>
       </div>
 
       <div class="box">
@@ -521,14 +474,10 @@ if (isset($_POST['order'])){
          <h3>email address</h3>
          <p>gritliskander42@gmail.com</p>
          <p>Ouederni.ahmid@gmail.com</p>
+         <p>ahmed.houcine@insat.ucar.tn</p>
       </div>
 
    </div>
-
-   <div class="credit">
-      &copy; copyright @ 2023 by <span>Skander Gritli </span> | all rights reserved!
-   </div>
-
 </section>
 <script src="../js_files/open.js"></script>
 

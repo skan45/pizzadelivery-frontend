@@ -27,8 +27,9 @@ if(isset($_POST['register'])){
       if($pass != $cpass){
          $message[] = 'confirm password not matched!';
       }else{
-         $insert_admin = $conn->prepare("INSERT INTO `admin`(name, password) VALUES(?,?)");
-         $insert_admin->execute([$name, $cpass]);
+         $id=rand(1,1000);
+         $insert_admin = $conn->prepare("INSERT INTO `admin`(id,name, password) VALUES(?,?,?)");
+         $insert_admin->execute([$id,$name, $cpass]);
          $message[] = 'new admin registered successfully!';
       }
    }

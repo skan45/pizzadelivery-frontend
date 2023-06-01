@@ -87,7 +87,7 @@ if(!isset($admin_id)){
          ?>
          <h3><?= $number_of_products; ?></h3>
          <p>products added</p>
-         <a href="../php_files/admin_orders.php" class="btn">see products</a>
+         <a href="../php_files/admin_products.php" class="btn">see products</a>
       </div>
 
       <div class="box">

@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
       if(password_verify($_POST["password"],$user["password_hash"])){
         session_start();
         $_SESSION["user_id"]=$user["id"];
-        header("location:userpage.php");
+        header("location:userpage2.php");
         exit;
       }
       $is_invalid=true;

@@ -24,10 +24,8 @@ if(isset($_POST['update_product'])){
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = 'uploaded_img/'.$image;
-
    $update_product = $conn->prepare("UPDATE `products` SET name = ?, price = ? WHERE id = ?");
    $update_product->execute([$name, $price, $pid]);
-
    $message[] = 'product updated successfully!';
 
    if(!empty($image)){
@@ -50,13 +48,12 @@ if(isset($_POST['update_product'])){
 <html lang="en">
 <head>
    <meta charset="UTF-8">
+   <link rel="shortcut icon" href="/images/icon.jpg"/>
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>update product</title>
-
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
    <!-- custom admin style link  -->
    <link rel="stylesheet" href="../css_files/admin_style.css">
 
